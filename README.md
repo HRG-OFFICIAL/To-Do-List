@@ -2,6 +2,20 @@
 
 A modern, production-ready todo list application built with Next.js, TypeScript, and Tailwind CSS. Features a clean Notion-style interface with advanced filtering, drag-and-drop functionality, and real-time updates.
 
+## 🚀 Live Demo
+
+**🌐 [View Live Demo](https://to-do-list-three-ashen-51.vercel.app/)**
+
+## 📸 Screenshots
+
+<div align="center">
+  <img src="screenshots/homepage-light-theme.jpeg" alt="Homepage - Light Theme" width="800" />
+  <p><em>Homepage with Light Theme - Clean Notion-style interface</em></p>
+  
+  <img src="screenshots/homepage-dark-theme.jpeg" alt="Homepage - Dark Theme" width="800" />
+  <p><em>Homepage with Dark Theme - Elegant dark mode design</em></p>
+</div>
+
 ## ✨ Features
 
 ### Core Functionality
