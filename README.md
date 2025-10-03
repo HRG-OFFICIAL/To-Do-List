@@ -1,6 +1,6 @@
 # Todo List App - Modern Task Management
 
-A modern, production-ready todo list application built with Next.js, TypeScript, and TailwindCSS. This application demonstrates best practices in React development, state management, and user experience design.
+A modern, production-ready todo list application built with Next.js, TypeScript, and Tailwind CSS. Features a clean Notion-style interface with advanced filtering, drag-and-drop functionality, and real-time updates.
 
 ## ✨ Features
 
@@ -8,28 +8,26 @@ A modern, production-ready todo list application built with Next.js, TypeScript,
 - ✅ **CRUD Operations**: Create, read, update, and delete todos
 - 🔐 **User Authentication**: Secure login and registration system
 - 📱 **Responsive Design**: Works seamlessly on desktop and mobile devices
-- 🎨 **Modern UI**: Clean, intuitive interface with smooth animations
+- 🎨 **Notion-style UI**: Clean, tabular interface inspired by Notion
 
 ### Advanced Features
 - 🏷️ **Categories**: Organize todos with custom categories and colors
 - ⚡ **Priorities**: Set priority levels (Low, Medium, High, Urgent)
-- 🔍 **Search & Filter**: Find todos by title, description, status, priority, or category
+- 🔍 **Smart Filtering**: Filter by status, priority, category, and search
 - 📅 **Due Dates**: Set and track deadlines for your tasks
 - 🔄 **Drag & Drop**: Reorder todos with intuitive drag-and-drop functionality
-- 🎭 **Theme Switching**: Multiple beautiful themes including dark mode
+- 🌙 **Theme Switching**: Light and dark mode with symbol-based switcher
 - 📊 **Real-time Updates**: Instant UI updates with optimistic rendering
-- 💾 **Offline Support**: PWA capabilities for offline usage
-- 🔔 **Notifications**: Toast notifications for user feedback
+- 🔔 **Toast Notifications**: User feedback for all actions
 
 ### Technical Features
 - 🚀 **TypeScript**: Full type safety throughout the application
 - ⚛️ **React Hooks**: Modern React patterns with custom hooks
-- 🎯 **Form Validation**: Robust form validation with Zod schemas
-- 🎨 **TailwindCSS**: Utility-first CSS framework for rapid styling
-- 📦 **Component Library**: Reusable UI components
-- 🧪 **Testing Ready**: Set up for unit, integration, and E2E testing
-- 🐳 **Docker Support**: Containerized for easy deployment
-- 🔄 **CI/CD Ready**: GitHub Actions workflow configuration
+- 🎯 **Performance Optimized**: React.memo, useCallback, and useMemo
+- 🎨 **Tailwind CSS**: Utility-first CSS framework for rapid styling
+- 📦 **Component Library**: Reusable UI components with proper accessibility
+- 🛡️ **Error Boundaries**: Graceful error handling
+- 🔄 **React Query**: Efficient data fetching and caching
 
 ## 🚀 Quick Start
 
@@ -41,8 +39,8 @@ A modern, production-ready todo list application built with Next.js, TypeScript,
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/todo-list-app.git
-   cd todo-list-app
+   git clone https://github.com/HRG-OFFICIAL/To-Do-List.git
+   cd To-Do-List
    ```
 
 2. **Install dependencies**
@@ -74,18 +72,21 @@ src/
 │   └── register/
 ├── components/            # React components
 │   ├── ui/               # Reusable UI components
-│   ├── TodoItem.tsx      # Individual todo component
+│   ├── TodoTable.tsx     # Main todo table component
+│   ├── TodoFilters.tsx   # Filtering and search
+│   ├── TodoHeader.tsx    # App header
+│   ├── TodoFooter.tsx    # App footer
 │   ├── CreateTodoModal.tsx
-│   ├── EditTodoModal.tsx
-│   ├── CategoryManager.tsx
 │   ├── ThemeSwitcher.tsx
-│   └── DraggableTodoList.tsx
+│   └── LoadingSpinner.tsx
 ├── contexts/             # React contexts
 │   └── AuthContext.tsx
 ├── hooks/               # Custom React hooks
 │   ├── useAuth.ts
 │   ├── useTodos.ts
-│   └── useCategories.ts
+│   ├── useCategories.ts
+│   ├── useFilters.ts
+│   └── useTodoOperations.ts
 ├── lib/                 # Utility functions
 │   ├── api.ts          # API client
 │   ├── mockApi.ts      # Mock API for frontend-only demo
@@ -101,57 +102,37 @@ src/
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
 - `npm run type-check` - Run TypeScript type checking
-- `npm run format` - Format code with Prettier
-- `npm run test` - Run unit tests
-- `npm run test:e2e` - Run end-to-end tests
 
-## 🎨 Themes
+## 🎨 Design Features
 
-The application includes 11 beautiful themes:
-- Light & Dark modes
-- Cupcake, Bumblebee, Synthwave
-- Halloween, Fantasy, Dracula
-- Aqua, Luxury, Night
+### Notion-Style Interface
+- **Tabular Layout**: Clean table design for easy scanning
+- **Smart Filtering**: Intuitive filter controls with icons
+- **Priority Badges**: Color-coded priority indicators
+- **Category Tags**: Visual category organization
+- **Responsive Design**: Works on all screen sizes
 
-## 📱 PWA Features
+### Theme System
+- **Light Mode**: Clean, bright interface
+- **Dark Mode**: Easy on the eyes
+- **Symbol-based Switcher**: Sun/moon icons for theme switching
 
-- **Offline Support**: Works without internet connection
-- **Installable**: Can be installed as a native app
-- **Responsive**: Optimized for all screen sizes
-- **Fast Loading**: Cached resources for quick access
-
-## 🧪 Testing
-
-### Unit Tests
-```bash
-npm run test
-```
-
-### E2E Tests
-```bash
-npm run test:e2e
-```
+## 🧪 Development
 
 ### Type Checking
 ```bash
 npm run type-check
 ```
 
-## 🐳 Docker
-
-### Build Docker Image
+### Linting
 ```bash
-docker build -t todo-list-app .
+npm run lint
 ```
 
-### Run Container
+### Building for Production
 ```bash
-docker run -p 3000:3000 todo-list-app
-```
-
-### Docker Compose
-```bash
-docker-compose up
+npm run build
+npm run start
 ```
 
 ## 🚀 Deployment
@@ -163,7 +144,7 @@ docker-compose up
 
 ### Netlify
 1. Build the project: `npm run build`
-2. Deploy the `out` folder to Netlify
+2. Deploy the `.next` folder to Netlify
 
 ### Manual Deployment
 1. Build: `npm run build`
@@ -196,15 +177,6 @@ NEXT_PUBLIC_APP_NAME=Todo List App
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-- [Next.js](https://nextjs.org/) - React framework
-- [TailwindCSS](https://tailwindcss.com/) - CSS framework
-- [React Hook Form](https://react-hook-form.com/) - Form handling
-- [Zod](https://zod.dev/) - Schema validation
-- [Framer Motion](https://www.framer.com/motion/) - Animations
-- [React Beautiful DnD](https://github.com/atlassian/react-beautiful-dnd) - Drag and drop
-
 ## 📞 Support
 
 If you have any questions or need help, please:
@@ -214,4 +186,4 @@ If you have any questions or need help, please:
 
 ---
 
-**Made with ❤️ by the Todo List App Team**
+**Built with ❤️ using Next.js, TypeScript, and Tailwind CSS**
