@@ -165,25 +165,6 @@ NEXT_PUBLIC_APP_NAME=Todo List App
 - **API**: Update `src/lib/api.ts`
 - **Styling**: Edit `src/app/globals.css`
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Support
-
-If you have any questions or need help, please:
-- Open an issue on GitHub
-- Check the documentation
-- Contact the development team
-
 ---
 
 **Built with ❤️ using Next.js, TypeScript, and Tailwind CSS**
