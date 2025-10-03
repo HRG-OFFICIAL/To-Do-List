@@ -121,7 +121,7 @@ export function useAuth() {
     }, 5000); // 5 second timeout
 
     return () => clearTimeout(timeout);
-  }, []);
+  }, [checkAuth, authState.isLoading]);
 
   return {
     ...authState,

@@ -39,7 +39,7 @@ const ErrorFallback: React.FC<{ error?: Error }> = ({ error }) => (
         Something went wrong
       </h2>
       <p className="text-gray-600 dark:text-gray-400 mb-4">
-        We're sorry, but something unexpected happened.
+        We&apos;re sorry, but something unexpected happened.
       </p>
       <button
         onClick={() => window.location.reload()}
