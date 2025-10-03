@@ -58,14 +58,14 @@ function HomePageContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex flex-col transition-colors duration-200">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex flex-col transition-colors duration-200 safe-all">
       <TodoHeader 
         user={user} 
         onLogout={logout} 
       />
 
-      <main className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1">
-        <div className="max-w-7xl mx-auto">
+      <main className="container-responsive py-responsive flex-1">
+        <div className="space-responsive">
           <TodoFilters
             filters={filters}
             todosCount={todosCount}
@@ -78,7 +78,7 @@ function HomePageContent() {
             onCreateTodo={openCreateModal}
           />
 
-          <div className="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-200 overflow-hidden">
+          <div className="bg-white dark:bg-gray-900 rounded-responsive border-responsive shadow-responsive transition-colors duration-200 overflow-hidden">
             <TodoTable
               todos={todos}
               onToggle={handleToggleTodo}
