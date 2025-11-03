@@ -115,8 +115,12 @@ export interface TodoCounts {
 
 export interface AppState {
   isCreateModalOpen: boolean;
+  isEditModalOpen: boolean;
+  editingTodo?: Todo | null;
 }
 
 export type AppAction = 
   | { type: 'OPEN_CREATE_MODAL' }
-  | { type: 'CLOSE_CREATE_MODAL' };
+  | { type: 'CLOSE_CREATE_MODAL' }
+  | { type: 'OPEN_EDIT_MODAL'; payload: { todo: Todo } }
+  | { type: 'CLOSE_EDIT_MODAL' };

@@ -26,7 +26,7 @@ function HomePageContent() {
   const { todos, isLoading: todosLoading, createTodo, updateTodo, deleteTodo, toggleTodo, reorderTodos } = useTodos(filters);
   const { categories } = useCategories();
   const { handleCreateTodo, handleUpdateTodo, handleDeleteTodo, handleToggleTodo, handleReorderTodos } = useTodoOperations({ createTodo, updateTodo, deleteTodo, toggleTodo, reorderTodos });
-  const { state, openCreateModal, closeCreateModal } = useAppReducer();
+  const { state, openCreateModal, closeCreateModal, openEditModal, closeEditModal } = useAppReducer();
 
   // Memoized calculations
   const todosCount = useMemo(() => calculateTodoCounts(todos), [todos, calculateTodoCounts]);
@@ -85,6 +85,7 @@ function HomePageContent() {
               onUpdate={handleUpdateTodo}
               onDelete={handleDeleteTodo}
               onReorder={handleReorderTodos}
+              onEditRequest={(todo) => openEditModal(todo)}
             />
           </div>
         </div>
@@ -96,6 +97,11 @@ function HomePageContent() {
         isCreateModalOpen={state.isCreateModalOpen}
         onCreateTodo={handleCreateTodo}
         onCloseCreateModal={closeCreateModal}
+        isEditModalOpen={state.isEditModalOpen}
+        editingTodo={state.editingTodo}
+        categories={categories}
+        onCloseEditModal={closeEditModal}
+        onUpdateTodo={handleUpdateTodo}
       />
     </div>
   );

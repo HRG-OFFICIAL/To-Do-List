@@ -8,6 +8,7 @@ interface TodoTableProps {
   onUpdate: (id: string, updates: any) => Promise<any>;
   onDelete: (id: string) => Promise<any>;
   onReorder: (todoIds: string[]) => Promise<any>;
+  onEditRequest?: (todo: Todo) => void;
 }
 
 const priorityColors = {
@@ -181,7 +182,7 @@ export const TodoTable = React.memo<TodoTableProps>(({
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => onUpdate(todo.id, { title: todo.title, description: todo.description })}
+                      onClick={() => onEditRequest ? onEditRequest(todo) : onUpdate(todo.id, { title: todo.title, description: todo.description })}
                       className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
                       aria-label="Edit task"
                     >
@@ -251,7 +252,7 @@ export const TodoTable = React.memo<TodoTableProps>(({
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={() => onUpdate(todo.id, { title: todo.title, description: todo.description })}
+                    onClick={() => onEditRequest ? onEditRequest(todo) : onUpdate(todo.id, { title: todo.title, description: todo.description })}
                     className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 touch-target-sm p-1"
                     aria-label="Edit task"
                   >
