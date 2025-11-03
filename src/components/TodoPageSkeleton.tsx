@@ -3,7 +3,7 @@ import { LoadingSpinner } from './LoadingSpinner';
 
 export const TodoPageSkeleton = React.memo(() => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-[hsl(var(--background))] transition-colors duration-200">
       <LoadingSpinner size="lg" text="Loading your todos..." />
     </div>
   );

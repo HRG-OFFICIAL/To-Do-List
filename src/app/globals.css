@@ -36,25 +36,26 @@
   }
 
   .dark {
-    /* Dark mode - Enhanced contrast and warmth */
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Dark mode - black/grey palette */
+    /* 121212, 1e1e1e, 212121 approximated via HSL */
+    --background: 0 0% 7%;        /* #121212 */
+    --foreground: 0 0% 88%;       /* ~#e1e1e1 */
+    --card: 0 0% 12%;             /* #1e1e1e */
+    --card-foreground: 0 0% 88%;
+    --popover: 0 0% 12%;          /* #1e1e1e */
+    --popover-foreground: 0 0% 88%;
     --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --primary-foreground: 0 0% 7%;
+    --secondary: 0 0% 13%;        /* #212121 */
+    --secondary-foreground: 0 0% 88%;
+    --muted: 0 0% 13%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 13%;
+    --accent-foreground: 0 0% 88%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --destructive-foreground: 0 0% 88%;
+    --border: 0 0% 16%;           /* ~#2a2a2a */
+    --input: 0 0% 16%;
     --ring: 224.3 76.3% 94.1%;
     
     /* Additional semantic colors for dark mode */
@@ -76,7 +77,13 @@
   }
   
   .dark body {
-    @apply bg-gray-900 text-gray-100;
+    /* Apply requested dark palette */
+    background-color: #121212;
+    color: #e5e5e5;
+  }
+  
+  .dark * {
+    border-color: #2a2a2a;
   }
 }
 
@@ -109,15 +116,15 @@
 
 /* Dark mode scrollbar */
 .dark ::-webkit-scrollbar-track {
-  background: #2d2d2d;
+  background: #1e1e1e;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #555;
+  background: #212121;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #777;
+  background: #2a2a2a;
 }
 
 /* Animation classes */
@@ -378,7 +385,7 @@
 
   /* Responsive borders */
   .border-responsive {
-    @apply border border-gray-200 dark:border-gray-700 sm:border-2;
+    @apply border border-gray-200 dark:border-[hsl(var(--border))] sm:border-2;
   }
 
   /* Responsive rounded corners */

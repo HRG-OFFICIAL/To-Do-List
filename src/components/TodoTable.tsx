@@ -57,7 +57,7 @@ export const TodoTable = React.memo<TodoTableProps>(({
   if (todos.length === 0) {
     return (
       <div className="text-center py-8 sm:py-12">
-        <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+        <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-gray-100 dark:bg-[hsl(var(--card))] rounded-full flex items-center justify-center">
           <svg className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
           </svg>
@@ -74,28 +74,28 @@ export const TodoTable = React.memo<TodoTableProps>(({
       <div className="hidden lg:block">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-gray-200 dark:border-gray-700">
+            <tr className="border-b border-gray-200 dark:border-[hsl(var(--border))]">
               <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Task
               </th>
-              <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 dark:text-[hsl(var(--muted-foreground))] uppercase tracking-wider">
                 Priority
               </th>
-              <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 dark:text-[hsl(var(--muted-foreground))] uppercase tracking-wider">
                 Due Date
               </th>
-              <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 dark:text-[hsl(var(--muted-foreground))] uppercase tracking-wider">
                 Category
               </th>
-              <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 dark:text-[hsl(var(--muted-foreground))] uppercase tracking-wider">
                 Created
               </th>
-              <th className="text-right py-3 px-4 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="text-right py-3 px-4 text-xs font-medium text-gray-500 dark:text-[hsl(var(--muted-foreground))] uppercase tracking-wider">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+          <tbody className="divide-y divide-gray-200 dark:divide-[hsl(var(--border))]">
             {todos.map((todo) => (
               <tr 
                 key={todo.id} 
@@ -214,7 +214,7 @@ export const TodoTable = React.memo<TodoTableProps>(({
           {todos.map((todo) => (
             <div 
               key={todo.id} 
-              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-200"
+              className="bg-white dark:bg-[hsl(var(--card))] border border-gray-200 dark:border-[hsl(var(--border))] rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-200"
             >
               {/* Card Header */}
               <div className="flex items-start justify-between mb-3">

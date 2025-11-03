@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A modern, production-ready todo list application",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

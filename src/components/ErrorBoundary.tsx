@@ -33,12 +33,12 @@ export class ErrorBoundary extends Component<Props, State> {
 }
 
 const ErrorFallback: React.FC<{ error?: Error }> = ({ error }) => (
-  <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+  <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-[hsl(var(--card))]">
     <div className="text-center">
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+    <h2 className="text-2xl font-bold text-gray-900 dark:text-[hsl(var(--foreground))] mb-4">
         Something went wrong
       </h2>
-      <p className="text-gray-600 dark:text-gray-400 mb-4">
+    <p className="text-gray-600 dark:text-[hsl(var(--muted-foreground))] mb-4">
         We&apos;re sorry, but something unexpected happened.
       </p>
       <button
@@ -52,7 +52,7 @@ const ErrorFallback: React.FC<{ error?: Error }> = ({ error }) => (
           <summary className="cursor-pointer text-sm text-gray-500">
             Error Details
           </summary>
-          <pre className="mt-2 text-xs text-gray-400 bg-gray-100 dark:bg-gray-800 p-2 rounded">
+    <pre className="mt-2 text-xs text-gray-400 bg-gray-100 dark:bg-[hsl(var(--secondary))] p-2 rounded">
             {error.message}
           </pre>
         </details>

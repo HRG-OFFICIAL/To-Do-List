@@ -14,6 +14,6 @@ describe('TodoFooter', () => {
     render(<TodoFooter />)
     
     const footer = screen.getByRole('contentinfo')
-    expect(footer).toHaveClass('bg-white', 'dark:bg-gray-900', 'border-t')
+    expect(footer).toHaveClass('bg-white', 'dark:bg-[hsl(var(--card))]', 'border-t')
   })
 })

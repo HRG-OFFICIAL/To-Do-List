@@ -51,14 +51,14 @@ function HomePageContent() {
   // Show loading while fetching todos
   if (todosLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
+  <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-[hsl(var(--background))] transition-colors duration-200">
         <LoadingSpinner size="lg" text="Loading your todos..." />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex flex-col transition-colors duration-200 safe-all">
+  <div className="min-h-screen bg-gray-50 dark:bg-[hsl(var(--background))] flex flex-col transition-colors duration-200 safe-all">
       <TodoHeader 
         user={user} 
         onLogout={logout} 
@@ -78,7 +78,7 @@ function HomePageContent() {
             onCreateTodo={openCreateModal}
           />
 
-          <div className="bg-white dark:bg-gray-900 rounded-responsive border-responsive shadow-responsive transition-colors duration-200 overflow-hidden">
+    <div className="bg-white dark:bg-[hsl(var(--card))] rounded-responsive border-responsive shadow-responsive transition-colors duration-200 overflow-hidden">
             <TodoTable
               todos={todos}
               onToggle={handleToggleTodo}
