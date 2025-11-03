@@ -31,6 +31,7 @@ export const TodoTable = React.memo<TodoTableProps>(({
   onUpdate,
   onDelete,
   onReorder,
+  onEditRequest,
 }) => {
   const formatDate = (date: string | Date) => {
     return new Date(date).toLocaleDateString('en-US', {
@@ -183,7 +184,7 @@ export const TodoTable = React.memo<TodoTableProps>(({
                       variant="ghost"
                       size="sm"
                       onClick={() => onEditRequest ? onEditRequest(todo) : onUpdate(todo.id, { title: todo.title, description: todo.description })}
-                      className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                      className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-900"
                       aria-label="Edit task"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -253,7 +254,7 @@ export const TodoTable = React.memo<TodoTableProps>(({
                     variant="ghost"
                     size="sm"
                     onClick={() => onEditRequest ? onEditRequest(todo) : onUpdate(todo.id, { title: todo.title, description: todo.description })}
-                    className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 touch-target-sm p-1"
+                    className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-900 touch-target-sm p-1"
                     aria-label="Edit task"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

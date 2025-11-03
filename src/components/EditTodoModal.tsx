@@ -83,21 +83,28 @@ export const EditTodoModal: React.FC<EditTodoModalProps> = ({ isOpen, todo, cate
       size="md"
     >
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" data-testid="edit-todo-form">
-        <Input
-          label="Title"
-          {...register('title')}
-          error={errors.title?.message}
-          placeholder="Update todo title"
-        />
+        <div>
+          <label className="block text-sm font-medium text-black mb-1">
+            Title
+          </label>
+          <input
+            {...register('title')}
+            className="w-full rounded-md border border-gray-300 bg-white text-black px-3 py-2 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            placeholder="Update todo title"
+          />
+          {errors.title && (
+            <p className="mt-1 text-sm text-red-600">{errors.title.message}</p>
+          )}
+        </div>
 
         <div>
-          <label className="block text-sm font-medium text-secondary-700 mb-1">
+          <label className="block text-sm font-medium text-black mb-1">
             Description
           </label>
           <textarea
             {...register('description')}
             rows={3}
-            className="w-full rounded-md border border-secondary-300 px-3 py-2 text-sm placeholder:text-secondary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            className="w-full rounded-md border border-gray-300 bg-white text-black px-3 py-2 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             placeholder="Update description (optional)"
           />
           {errors.description && (
@@ -106,16 +113,16 @@ export const EditTodoModal: React.FC<EditTodoModalProps> = ({ isOpen, todo, cate
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-secondary-700 mb-1">
+          <label className="block text-sm font-medium text-black mb-1">
             Priority
           </label>
           <select
             {...register('priority')}
-            className="w-full bg-white dark:bg-[hsl(var(--secondary))] border border-gray-200 dark:border-[hsl(var(--border))] rounded-md px-3 py-2 text-sm text-gray-700 dark:text-[hsl(var(--muted-foreground))] focus:ring-2 focus:ring-primary-500 focus:border-transparent cursor-pointer shadow-sm"
+            className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-sm text-black focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent cursor-pointer"
           >
             {priorityOptions.map((option) => (
-              <option key={option.value} value={option.value} className="bg-white dark:bg-[hsl(var(--secondary))] text-gray-900 dark:text-[hsl(var(--foreground))]">
-                {option.label}
+              <option key={option.value} value={option.value} className="bg-white text-black">
+                {option.icon} {option.label}
               </option>
             ))}
           </select>
@@ -125,15 +132,15 @@ export const EditTodoModal: React.FC<EditTodoModalProps> = ({ isOpen, todo, cate
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-secondary-700 mb-1">
+          <label className="block text-sm font-medium text-black mb-1">
             Category
           </label>
           <select
             {...register('categoryId')}
-            className="w-full bg-white dark:bg-[hsl(var(--secondary))] border border-gray-200 dark:border-[hsl(var(--border))] rounded-md px-3 py-2 text-sm text-gray-700 dark:text-[hsl(var(--muted-foreground))] focus:ring-2 focus:ring-primary-500 focus:border-transparent cursor-pointer shadow-sm"
+            className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-sm text-black focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent cursor-pointer"
           >
             {categories.map((category) => (
-              <option key={category.id} value={category.id} className="bg-white dark:bg-[hsl(var(--secondary))] text-gray-900 dark:text-[hsl(var(--foreground))]">
+              <option key={category.id} value={category.id} className="bg-white text-black">
                 {category.name}
               </option>
             ))}
@@ -143,12 +150,19 @@ export const EditTodoModal: React.FC<EditTodoModalProps> = ({ isOpen, todo, cate
           )}
         </div>
 
-        <Input
-          label="Due Date"
-          type="date"
-          {...register('dueDate')}
-          error={errors.dueDate?.message}
-        />
+        <div>
+          <label className="block text-sm font-medium text-black mb-1">
+            Due Date
+          </label>
+          <input
+            type="date"
+            {...register('dueDate')}
+            className="w-full rounded-md border border-gray-300 bg-white text-black px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+          />
+          {errors.dueDate && (
+            <p className="mt-1 text-sm text-red-600">{errors.dueDate.message}</p>
+          )}
+        </div>
 
         <div className="flex justify-end space-x-3 pt-4">
           <Button
